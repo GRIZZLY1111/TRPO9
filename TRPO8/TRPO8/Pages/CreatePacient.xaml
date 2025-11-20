@@ -1,0 +1,31 @@
+﻿<Page x:Class="TRPO8.Pages.CreatePacient"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TRPO8.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CreatePacient">
+
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel>
+                <Label Content="Фамилия пациента"/>
+                <Label Content="Имя пациентов:"/>
+                <Label Content="Отчество пациента:"/>
+                <Label Content="Дата рождения:"/>
+                <Label Content="Номер телефона:"/>
+                <Button Click="AddPacientButton_Click" Content="Добавить" Style="{StaticResource AddButton}"/>
+                <Button Click="BackButton_Click" Content="Назад" Style="{StaticResource StandardButton}"/>
+            </StackPanel>
+            <StackPanel>
+                <TextBox Text="{Binding AddPacient.LastName}" Width="150px" Style="{StaticResource TextBoxWithMargin}"/>
+                <TextBox Text="{Binding AddPacient.Name}" Width="150px" Style="{StaticResource TextBoxWithMargin}"/>
+                <TextBox Text="{Binding AddPacient.MiddleName}" Width="150px" Style="{StaticResource TextBoxWithMargin}"/>
+                <DatePicker SelectedDate="{Binding AddPacient.Birthday}" Width="150" Style="{StaticResource DatePickerWithMargin}"/>
+                <TextBox Text="{Binding AddPacient.PhoneNumber}" Width="150px" Style="{StaticResource TextBoxWithMargin}"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
