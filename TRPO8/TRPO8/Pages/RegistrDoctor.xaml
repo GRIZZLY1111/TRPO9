@@ -18,12 +18,12 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel>
-            <Label Content="Фамилия:"/>
-            <Label Content="Имя:"/>
-            <Label Content="Отчество:"/>
-            <Label Content="Специальность:"/>
-            <Label Content="Пароль:"/>
-            <Label Content="Подтверждение пароля:"/>
+            <Label Content="Фамилия:" Style="{DynamicResource LabelWithMargin}"/>
+            <Label Content="Имя:" Style="{DynamicResource LabelWithMargin}"/>
+            <Label Content="Отчество:" Style="{DynamicResource LabelWithMargin}"/>
+            <Label Content="Специальность:" Style="{DynamicResource LabelWithMargin}"/>
+            <Label Content="Пароль:" Style="{DynamicResource LabelWithMargin}"/>
+            <Label Content="Подтверждение пароля:" Style="{DynamicResource LabelWithMargin}"/>
             <Button Click="RegisterButton_Click" Content="Зарегистрироваться" Style="{StaticResource StandardButton}"/>
             <Button Click="BackButton_Click" Content="Назад" Style="{StaticResource StandardButton}"/>
         </StackPanel>

@@ -11,11 +11,11 @@
     <Grid>
         <StackPanel Orientation="Horizontal">
             <StackPanel>
-                <Label Content="Фамилия пациента"/>
-                <Label Content="Имя пациентов:"/>
-                <Label Content="Отчество пациента:"/>
-                <Label Content="Дата рождения:"/>
-                <Label Content="Номер телефона:"/>
+                <Label Content="Фамилия пациента" Style="{DynamicResource LabelWithMargin}"/>
+                <Label Content="Имя пациентов:" Style="{DynamicResource LabelWithMargin}"/>
+                <Label Content="Отчество пациента:" Style="{DynamicResource LabelWithMargin}"/>
+                <Label Content="Дата рождения:" Style="{DynamicResource LabelWithMargin}"/>
+                <Label Content="Номер телефона:" Style="{DynamicResource LabelWithMargin}"/>
                 <Button Click="IzmeneniePacientButton_Click" Content="Изменить" Style="{StaticResource StandardButton}"/>
                 <Button Click="SbrosButton_Click" Content="Сбросить" Style="{StaticResource DeleteButton}"/>
                 <Button Click="BackButton_Click" Content="Назад" Style="{StaticResource StandardButton}"/>

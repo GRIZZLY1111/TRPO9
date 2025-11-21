@@ -14,8 +14,8 @@
         </Grid.RowDefinitions>
 
         <Menu Grid.Row="0" Background="Transparent" Foreground="{DynamicResource ForegroundBrush}">
-            <MenuItem Header="Настройки">
-                <MenuItem Header="Сменить тему" Click="ChangeTheme_Click"/>
+            <MenuItem Header="Сменить тему">
+                <MenuItem Header="Сменить тему" Click="ChangeTheme_Click" Style="{StaticResource MenuItemForeground}"/>
             </MenuItem>
         </Menu>
 

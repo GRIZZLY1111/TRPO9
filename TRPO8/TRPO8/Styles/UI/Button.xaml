@@ -1,14 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Thickness x:Key="ButtonMargin">4</Thickness>
-    <Thickness x:Key="TextBoxMargin">4</Thickness>
-    <Thickness x:Key="DatePickerMargin">1</Thickness>
-    <Thickness x:Key="BorderMargin">5</Thickness>
-    <Thickness x:Key="LabelMargin">0</Thickness>
-
     <Style x:Key="StandardButton" TargetType="Button">
-        <Setter Property="Margin" Value="{StaticResource ButtonMargin}"/>
+        <Setter Property="Margin" Value="4"/>
         <Setter Property="Padding" Value="10,5"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderBrush" Value="{DynamicResource BlueBrush}"/>
@@ -37,9 +31,25 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    
+
     <Style x:Key="AddButton" TargetType="Button" BasedOn="{StaticResource StandardButton}">
-        <Setter Property="Content" Value="+"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="6"
+                    Padding="{TemplateBinding Padding}">
+                        <DockPanel>
+                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+                            <Label Content="+" Style="{DynamicResource LabelWithMargin}"/>
+                        </DockPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Foreground" Value="{DynamicResource SuccessBrush}"/>
@@ -57,7 +67,23 @@
     </Style>
 
     <Style x:Key="DeleteButton" TargetType="Button" BasedOn="{StaticResource StandardButton}">
-        <Setter Property="Content" Value="🗑️"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}"
+            CornerRadius="6"
+            Padding="{TemplateBinding Padding}">
+                        <DockPanel>
+                            <ContentPresenter HorizontalAlignment="Center"
+                          VerticalAlignment="Center"/>
+                            <Label Content="🗑️"  Style="{DynamicResource LabelWithMargin}"/>
+                        </DockPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Foreground" Value="{DynamicResource DangerBrush}"/>
@@ -74,20 +100,39 @@
         </Style.Triggers>
     </Style>
 
+    <Style x:Key="TextBlockWithMargin" TargetType="TextBlock">
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
+    </Style>
 
     <Style x:Key="TextBoxWithMargin" TargetType="TextBox">
-        <Setter Property="Margin" Value="{StaticResource TextBoxMargin}"/>
+        <Setter Property="Margin" Value="4"/>
     </Style>
 
     <Style x:Key="DatePickerWithMargin" TargetType="DatePicker">
-        <Setter Property="Margin" Value="{StaticResource DatePickerMargin}"/>
+        <Setter Property="Margin" Value="1"/>
     </Style>
 
     <Style x:Key="BorderWithMargin" TargetType="Border">
-        <Setter Property="Margin" Value="{StaticResource BorderMargin}"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ForegroundBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
     </Style>
 
     <Style x:Key="LabelWithMargin" TargetType="Label">
-        <Setter Property="Margin" Value="{StaticResource LabelMargin}"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
+    </Style>
+
+    <Style x:Key="StackPanelBackground" TargetType="StackPanel">
+        <Setter Property="Background" Value="{DynamicResource StackBackground}"/>
+    </Style>
+
+    <Style x:Key="ListViewBackground" TargetType="ListView">
+        <Setter Property="Background" Value="{DynamicResource WindowBackground}"/>
+    </Style>
+
+    <Style x:Key="MenuItemForeground" TargetType="MenuItem">
+        <Setter Property="Foreground" Value="{StaticResource WindowBackground}"/>
     </Style>
 </ResourceDictionary>

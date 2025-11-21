@@ -17,8 +17,8 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <StackPanel>
-            <Label Content="Введите свой ID:"/>
-            <Label Content="Введите пароль:"/>
+            <Label Content="Введите свой ID:" Style="{DynamicResource LabelWithMargin}"/>
+            <Label Content="Введите пароль:" Style="{DynamicResource LabelWithMargin}"/>
             <Button Click="LoginButton_Click" Content="Войти" Style="{StaticResource StandardButton}"/>
             <Button Click="RegistrButton_Click" Content="Зарегистрироваться" Style="{StaticResource StandardButton}"/>
         </StackPanel>

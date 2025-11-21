@@ -17,59 +17,59 @@
             <RowDefinition Height="300"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Border Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" BorderBrush="Black" BorderThickness="1" Margin="5">
+        <Border Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Style="{DynamicResource BorderWithMargin}">
             <StackPanel Orientation="Horizontal">
                 <Button Click="CreatePacientButton_Click" Content="Создать пациента" Style="{StaticResource AddButton}" Width="250"/>
                 <Button Click="StartPriemButton_Click" Content="Начать прием" Style="{StaticResource StandardButton}" Width="250"/>
                 <Button Click="IzmeneniePacientButton_Click" Content="Изменить информацию" Style="{StaticResource StandardButton}" Width="250"/>
             </StackPanel>
         </Border>
-        <Border Grid.Column="0" Grid.Row="1" BorderBrush="Black" BorderThickness="1" Width="310" Margin="5">
+        <Border Grid.Column="0" Grid.Row="1" Width="310" Style="{DynamicResource BorderWithMargin}">
             <StackPanel Orientation="Horizontal">
                 <StackPanel>
-                    <TextBlock Text="Идентификатор:"/>
-                    <TextBlock Text="Фамилия:"/>
-                    <TextBlock Text="Имя:"/>
-                    <TextBlock Text="Отчество:"/>
-                    <TextBlock Text="Специальность:"/>
+                    <TextBlock Text="Идентификатор:" Style="{DynamicResource TextBlockWithMargin}"/>
+                    <TextBlock Text="Фамилия:" Style="{DynamicResource TextBlockWithMargin}"/>
+                    <TextBlock Text="Имя:" Style="{DynamicResource TextBlockWithMargin}"/>
+                    <TextBlock Text="Отчество:" Style="{DynamicResource TextBlockWithMargin}"/>
+                    <TextBlock Text="Специальность:" Style="{DynamicResource TextBlockWithMargin}"/>
                 </StackPanel>
                 <StackPanel>
-                    <TextBlock Text="{Binding CurrentDoctor.ID}"/>
-                    <TextBlock Text="{Binding CurrentDoctor.LastName}"/>
-                    <TextBlock Text="{Binding CurrentDoctor.Name}"/>
-                    <TextBlock Text="{Binding CurrentDoctor.MiddleName}"/>
-                    <TextBlock Text="{Binding CurrentDoctor.Specialisation}"/>
+                    <TextBlock Text="{Binding CurrentDoctor.ID}" Style="{DynamicResource TextBlockWithMargin}"/>
+                    <TextBlock Text="{Binding CurrentDoctor.LastName}" Style="{DynamicResource TextBlockWithMargin}"/>
+                    <TextBlock Text="{Binding CurrentDoctor.Name}" Style="{DynamicResource TextBlockWithMargin}"/>
+                    <TextBlock Text="{Binding CurrentDoctor.MiddleName}" Style="{DynamicResource TextBlockWithMargin}"/>
+                    <TextBlock Text="{Binding CurrentDoctor.Specialisation}" Style="{DynamicResource TextBlockWithMargin}"/>
                 </StackPanel>
             </StackPanel>
         </Border>
-        <Border Grid.Column="1" Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="5">
-            <ListView ItemsSource="{Binding Pacients}" SelectedItem="{Binding SelectedPacient}">
+        <Border Grid.Column="1" Grid.Row="1" Style="{DynamicResource BorderWithMargin}">
+            <ListView ItemsSource="{Binding Pacients}" SelectedItem="{Binding SelectedPacient}" Style="{DynamicResource ListViewBackground}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
                             <StackPanel>
-                                <TextBlock Text="Идентификатор: "/>
-                                <TextBlock Text="Фамилия: "/>
-                                <TextBlock Text="Имя: "/>
-                                <TextBlock Text="Отчество: "/>
-                                <TextBlock Text="Дата рождения: "/>
-                                <TextBlock Text="Номер телефона: "/>
+                                <TextBlock Text="Идентификатор: " Style="{DynamicResource TextBlockWithMargin}"/>
+                                <TextBlock Text="Фамилия: " Style="{DynamicResource TextBlockWithMargin}"/>
+                                <TextBlock Text="Имя: " Style="{DynamicResource TextBlockWithMargin}"/>
+                                <TextBlock Text="Отчество: " Style="{DynamicResource TextBlockWithMargin}"/>
+                                <TextBlock Text="Дата рождения: " Style="{DynamicResource TextBlockWithMargin}"/>
+                                <TextBlock Text="Номер телефона: " Style="{DynamicResource TextBlockWithMargin}"/>
                             </StackPanel>
                             <StackPanel>
-                                <TextBlock Text="{Binding ID}"/>
-                                <TextBlock Text="{Binding LastName}"/>
-                                <TextBlock Text="{Binding Name}"/>
-                                <TextBlock Text="{Binding MiddleName}"/>
-                                <TextBlock Text="{Binding Birthday, StringFormat=' {0:dd.MM.yyyy}'}"/>
-                                <TextBlock Text="{Binding PhoneNumber}"/>
+                                <TextBlock Text="{Binding ID}" Style="{DynamicResource TextBlockWithMargin}"/>
+                                <TextBlock Text="{Binding LastName}" Style="{DynamicResource TextBlockWithMargin}"/>
+                                <TextBlock Text="{Binding Name}" Style="{DynamicResource TextBlockWithMargin}"/>
+                                <TextBlock Text="{Binding MiddleName}" Style="{DynamicResource TextBlockWithMargin}"/>
+                                <TextBlock Text="{Binding Birthday, StringFormat=' {0:dd.MM.yyyy}'}" Style="{DynamicResource TextBlockWithMargin}"/>
+                                <TextBlock Text="{Binding PhoneNumber}" Style="{DynamicResource TextBlockWithMargin}"/>
                             </StackPanel>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </Border>
-        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="2" Background="AntiqueWhite">
-            <Label>Всего в списке:</Label>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="2" Style="{DynamicResource StackPanelBackground}">
+            <Label Content="Всего в списке:"/>
             <Label Content="{Binding Pacients.Count}"/>
         </StackPanel>
     </Grid>
